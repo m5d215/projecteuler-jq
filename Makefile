@@ -1,0 +1,2 @@
+%: src/%.jq
+	jq -ncf $<
