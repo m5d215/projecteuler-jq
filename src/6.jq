@@ -1,4 +1,4 @@
-[range(1; 101)] as $range
-| ($range | map(. * .) | add) as $a
-| pow($range | add; 2) as $b
+[range(1; 101)]
+| (map(. * .) | add) as $a
+| pow(add; 2) as $b
 | $b - $a

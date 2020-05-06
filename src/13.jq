@@ -117,6 +117,5 @@ def bigadd(a; b):
 ]
 
 | map(split("") | map(tonumber) | reverse)
-| . as $nums
-| reduce $nums[1:][] as $num ($nums[0]; bigadd(.; $num))
+| reduce .[1:][] as $num (.[0]; bigadd(.; $num))
 | .[-10:] | reverse | map(tostring) | join("")

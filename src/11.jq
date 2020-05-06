@@ -31,6 +31,6 @@
     range(3; $table | length - 3) as $row
     | range(3; $table | length - 3) as $column
     | ([1, 0], [0, 1], [1, 1], [1, -1]) as [$dy, $dx]
-    | reduce range(0; 4) as $i (1; . * ($table[$row + $dy * $i][$column + $dx * $i] // 0))
+    | reduce range(0; 4) as $i (1; . * ($table[$row + $dy * $i][$column + $dx * $i]))
   ]
 | max

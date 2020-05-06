@@ -5,7 +5,7 @@ def palindromes:
     | $a * 100000 + $b * 10000 + $c * 1000 + $c * 100 + $b * 10 + $a
 ;
 
-def ispalindrome:
+def condition:
     . as $palindrome
     | isempty(
         range(100; 1000) as $x
@@ -16,4 +16,4 @@ def ispalindrome:
     | not
 ;
 
-first(palindromes | select(ispalindrome))
+first(palindromes | select(condition))

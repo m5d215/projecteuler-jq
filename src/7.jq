@@ -1,12 +1,11 @@
 def takeWhile(condition):
-    label $L
-    | foreach .[] as $item (null; null;
+    label $L | foreach .[] as $item (null; null;
         if $item | condition then
             $item
         else
             break $L
         end
-        )
+    )
 ;
 
 def isprime(knownPrimes):
