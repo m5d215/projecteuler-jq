@@ -1,17 +1,4 @@
-def bigadd(a; b):
-    reduce ([a, b] | transpose)[] as [$ai, $bi] ([[], 0];
-        . as [$digits, $carry]
-        | ($carry + $ai + $bi) as $x
-        | [$digits + [$x % 10], ($x / 10 | floor)]
-    )
-    | . as [$digits, $carry]
-    |
-        if $carry == 0 then
-            $digits
-        else
-            $digits + [1]
-        end
-;
+import "./lib" as L;
 
 [
     "37107287533902102798797998220837590246510135740250",
@@ -116,6 +103,6 @@ def bigadd(a; b):
     "53503534226472524250874054075591789781264330331690"
 ]
 
-| map(split("") | map(tonumber) | reverse)
-| reduce .[1:][] as $num (.[0]; bigadd(.; $num))
+| map(L::to_multiprecision)
+| reduce .[1:][] as $num (.[0]; L::mp_add($num))
 | .[-10:] | reverse | map(tostring) | join("")

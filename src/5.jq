@@ -1,3 +1,5 @@
+import "./lib" as L;
+
 def factorize:
     def generate:
         [., {}, 2]
@@ -20,12 +22,8 @@ def factorize:
     last(generate)
 ;
 
-def product:
-    reduce .[] as $item (1; . * $item)
-;
-
 [20 | range(2; . + 1) | factorize | to_entries[]]
 | group_by(.key)
 | map(max_by(.value))
 | map(pow(.key | tonumber; .value))
-| product
+| L::product

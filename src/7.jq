@@ -1,16 +1,8 @@
-def takeWhile(condition):
-    label $L | foreach .[] as $item (null; null;
-        if $item | condition then
-            $item
-        else
-            break $L
-        end
-    )
-;
+import "./lib" as L;
 
 def isprime(knownPrimes):
     . as $n
-    | [knownPrimes | takeWhile(. * . <= $n)] # optimize
+    | [knownPrimes | L::takeWhile(. * . <= $n)] # optimize
     | all($n % . != 0)
 ;
 

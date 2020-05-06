@@ -1,12 +1,4 @@
-def plus(b):
-    reduce ([., b] | transpose)[] as [$ai, $bi] ([[], 0];
-        . as [$ds, $carry]
-        | ($ai + $bi + $carry) as $x
-        | [$ds + [$x % 10], ($x / 10 | floor)]
-    )
-    | . as [$ds, $carry]
-    | if $carry == 0 then $ds else $ds + [$carry] end
-;
+import "./lib" as L;
 
 def multiplies(n):
     def _multiplies(n):
@@ -25,7 +17,7 @@ def multiplies(n):
         _multiplies(2) | multiplies(n / 2)
     else
         . as $ds
-        | _multiplies(2) | multiplies((n - 1) / 2) | plus($ds)
+        | _multiplies(2) | multiplies((n - 1) / 2) | L::mp_add($ds)
     end
 ;
 

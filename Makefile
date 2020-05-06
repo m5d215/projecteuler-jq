@@ -1,2 +1,2 @@
 %: src/%.jq
-	jq -ncf $<
+	@cd src && jq -ncrf $(shell basename $<)
