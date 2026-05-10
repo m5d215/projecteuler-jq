@@ -5,4 +5,4 @@
 	@cd src && jq -ncrf $(shell basename $<)
 
 assets/names.txt:
-	@curl 'http://odz.sakura.ne.jp/projecteuler/index.php?plugin=attach&refer=Problem%2022&openfile=names.txt' -o assets/names.txt --create-dirs
+	@curl 'https://projecteuler.net/project/resources/p022_names.txt' -o assets/names.txt --create-dirs
