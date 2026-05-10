@@ -1,19 +1,10 @@
-def factorial:
-    if . <= 1 then 1 else . * ((. - 1) | factorial) end
-;
-
-def nth_perm($n; $items):
-    ($items | length) as $L
-    | reduce range($L - 1; -1; -1) as $i ({k: $n, rem: $items, out: []};
-        ($i | factorial) as $f
-        | (.k / $f | floor) as $idx
-        | {
-            k: (.k - $idx * $f),
-            rem: (.rem[:$idx] + .rem[$idx+1:]),
-            out: (.out + [.rem[$idx]])
-          }
-      )
-    | .out
+def permutations:
+    if length == 0 then []
+    else
+        . as $arr
+        | range(0; length) as $i
+        | [$arr[$i]] + ($arr[:$i] + $arr[$i+1:] | permutations)
+    end
 ;
 
 def is_prime:
@@ -25,9 +16,6 @@ def is_prime:
       end
 ;
 
-first(
-    range(5039; -1; -1)
-    | nth_perm(.; [1,2,3,4,5,6,7])
-    | map(tostring) | join("") | tonumber
-    | select(is_prime)
-)
+[[1,2,3,4,5,6,7] | permutations | map(tostring) | join("") | tonumber]
+| sort | reverse
+| first(.[] | select(is_prime))
