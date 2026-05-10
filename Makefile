@@ -9,6 +9,9 @@ JQ ?= jq-jit
 54: src/54.jq assets/poker.txt
 	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/poker.txt
 
+59: src/59.jq assets/cipher.txt
+	@cd src && $(JQ) -crf $(shell basename $<) -R <../assets/cipher.txt
+
 %: src/%.jq
 	@cd src && $(JQ) -ncrf $(shell basename $<)
 
@@ -20,3 +23,6 @@ assets/words.txt:
 
 assets/poker.txt:
 	@curl 'https://projecteuler.net/project/resources/p054_poker.txt' -o assets/poker.txt --create-dirs
+
+assets/cipher.txt:
+	@curl 'https://projecteuler.net/project/resources/p059_cipher.txt' -o assets/cipher.txt --create-dirs
