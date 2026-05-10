@@ -10,8 +10,7 @@ def is_prime_table($max):
 def consec($is_p; $a; $b; $max):
     {n: 0}
     | until(
-        .n as $n
-        | ($n * $n + $a * $n + $b) as $v
+        (.n * .n + $a * .n + $b) as $v
         | $v < 0 or $v > $max or ($is_p[$v] | not);
         .n += 1
       )
