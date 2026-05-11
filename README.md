@@ -70,9 +70,11 @@
 | 71 | 857 | 129 |  |
 | 72 | 3635 | 226 |  |
 | 73 | 51229 | 28903 |  |
+| 74 | 207900 | 22909 |  |
 | 75 | 4512 | — | natural form kept; jq-jit doesn't finish due to [#652](https://github.com/m5d215/jq-jit/issues/652) (recursive `gcd` defeats in-place RMW in `reduce gen as $x ($arr; .[$x] += 1)`) |
 | 76 | 14 | 6 |  |
 | 77 | 14 | 10 |  |
+| 78 | 14990 | 7426 |  |
 | 79 | 4 | 4 |  |
 | 80 | 12894 | 3269 |  |
 | 81 | 15 | 10 |  |
