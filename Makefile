@@ -36,6 +36,9 @@ JQ ?= jq-jit
 98: src/98.jq assets/words2.txt
 	@cd src && $(JQ) -crf $(shell basename $<) -R <../assets/words2.txt
 
+99: src/99.jq assets/base_exp.txt
+	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/base_exp.txt
+
 %: src/%.jq
 	@cd src && $(JQ) -ncrf $(shell basename $<)
 
@@ -68,3 +71,6 @@ assets/sudoku.txt:
 
 assets/words2.txt:
 	@curl 'https://projecteuler.net/project/resources/p098_words.txt' -o assets/words2.txt --create-dirs
+
+assets/base_exp.txt:
+	@curl 'https://projecteuler.net/project/resources/p099_base_exp.txt' -o assets/base_exp.txt --create-dirs
