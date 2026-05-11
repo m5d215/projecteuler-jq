@@ -24,6 +24,9 @@ JQ ?= jq-jit
 82: src/82.jq assets/matrix.txt
 	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/matrix.txt
 
+83: src/83.jq assets/matrix.txt
+	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/matrix.txt
+
 %: src/%.jq
 	@cd src && $(JQ) -ncrf $(shell basename $<)
 
