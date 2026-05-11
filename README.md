@@ -57,6 +57,7 @@
 | 57 | 855 | 412 |  |
 | 58 | 17913 | 469 |  |
 | 59 | 57479 | 7425 |  |
+| 60 | 569749 | — | jq-jit aborts with `"null and number cannot be multiplied"` during the DFS — param-binding bug in the same family as [#653](https://github.com/m5d215/jq-jit/issues/653) (TODO: file dedicated issue). Stock jq finishes in ~9.5 min. |
 | 61 | 83 | 27 |  |
 | 62 | 38 | 15 |  |
 | 63 | 2 | 5 |  |
