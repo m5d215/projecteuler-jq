@@ -18,6 +18,9 @@ JQ ?= jq-jit
 79: src/79.jq assets/keylog.txt
 	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/keylog.txt
 
+81: src/81.jq assets/matrix.txt
+	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/matrix.txt
+
 %: src/%.jq
 	@cd src && $(JQ) -ncrf $(shell basename $<)
 
@@ -38,3 +41,6 @@ assets/triangle.txt:
 
 assets/keylog.txt:
 	@curl 'https://projecteuler.net/project/resources/p079_keylog.txt' -o assets/keylog.txt --create-dirs
+
+assets/matrix.txt:
+	@curl 'https://projecteuler.net/project/resources/p081_matrix.txt' -o assets/matrix.txt --create-dirs
