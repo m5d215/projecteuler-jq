@@ -90,3 +90,4 @@
 | 93 | 813 | 806 |  |
 | 94 | 3 | 7 |  |
 | 95 | 52835 | 3022 |  |
+| 96 | 101375 | 16879 | `valid_at` inlined: when it's a separate def the recursive backtracking trips a jq-jit param-binding bug (board leaks into `$r`). Stock jq is fine either way. |

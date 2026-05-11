@@ -30,6 +30,9 @@ JQ ?= jq-jit
 89: src/89.jq assets/roman.txt
 	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/roman.txt
 
+96: src/96.jq assets/sudoku.txt
+	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/sudoku.txt
+
 %: src/%.jq
 	@cd src && $(JQ) -ncrf $(shell basename $<)
 
@@ -56,3 +59,6 @@ assets/matrix.txt:
 
 assets/roman.txt:
 	@curl 'https://projecteuler.net/project/resources/p089_roman.txt' -o assets/roman.txt --create-dirs
+
+assets/sudoku.txt:
+	@curl 'https://projecteuler.net/project/resources/p096_sudoku.txt' -o assets/sudoku.txt --create-dirs
