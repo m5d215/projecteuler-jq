@@ -15,6 +15,9 @@ JQ ?= jq-jit
 67: src/67.jq assets/triangle.txt
 	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/triangle.txt
 
+79: src/79.jq assets/keylog.txt
+	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/keylog.txt
+
 %: src/%.jq
 	@cd src && $(JQ) -ncrf $(shell basename $<)
 
@@ -32,3 +35,6 @@ assets/cipher.txt:
 
 assets/triangle.txt:
 	@curl 'https://projecteuler.net/project/resources/p067_triangle.txt' -o assets/triangle.txt --create-dirs
+
+assets/keylog.txt:
+	@curl 'https://projecteuler.net/project/resources/p079_keylog.txt' -o assets/keylog.txt --create-dirs
