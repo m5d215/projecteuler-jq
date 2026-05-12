@@ -39,6 +39,9 @@ JQ ?= jq-jit
 99: src/99.jq assets/base_exp.txt
 	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/base_exp.txt
 
+102: src/102.jq assets/triangles.txt
+	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/triangles.txt
+
 %: src/%.jq
 	@cd src && $(JQ) -ncrf $(shell basename $<)
 
@@ -74,3 +77,6 @@ assets/words2.txt:
 
 assets/base_exp.txt:
 	@curl 'https://projecteuler.net/project/resources/p099_base_exp.txt' -o assets/base_exp.txt --create-dirs
+
+assets/triangles.txt:
+	@curl 'https://projecteuler.net/project/resources/p102_triangles.txt' -o assets/triangles.txt --create-dirs
