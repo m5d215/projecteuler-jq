@@ -51,3 +51,16 @@ def mp_add(b):
             $digits + [1]
         end
 ;
+
+def mp_mul_int($k):
+    reduce .[] as $d ([[], 0];
+        . as [$digits, $carry]
+        | ($carry + $d * $k) as $x
+        | [$digits + [$x % 10], ($x / 10 | floor)]
+    )
+    | until(.[1] == 0;
+        . as [$d, $c]
+        | [$d + [$c % 10], ($c / 10 | floor)]
+      )
+    | .[0]
+;
