@@ -5,21 +5,26 @@ def first_empty:
       )
 ;
 
+def valid_at($i; $v):
+    . as $board
+    | ($i / 9 | floor) as $r
+    | ($i % 9) as $c
+    | (($r / 3 | floor) * 3) as $br
+    | (($c / 3 | floor) * 3) as $bc
+    | reduce range(0; 9) as $k (true;
+        . and $board[$r * 9 + $k] != $v
+        and $board[$k * 9 + $c] != $v
+        and $board[($br + ($k / 3 | floor)) * 9 + $bc + ($k % 3)] != $v
+      )
+;
+
 def solve:
     . as $board
     | if all($board[]; . != 0) then $board
       else
         first_empty as $idx
-        | ($idx / 9 | floor) as $r
-        | ($idx % 9) as $c
-        | (($r / 3 | floor) * 3) as $br
-        | (($c / 3 | floor) * 3) as $bc
         | range(1; 10) as $v
-        | select(reduce range(0; 9) as $k (true;
-            . and $board[$r * 9 + $k] != $v
-            and $board[$k * 9 + $c] != $v
-            and $board[($br + ($k / 3 | floor)) * 9 + $bc + ($k % 3)] != $v
-          ))
+        | select(valid_at($idx; $v))
         | ($board | .[$idx] = $v)
         | solve
       end
