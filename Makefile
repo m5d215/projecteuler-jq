@@ -45,6 +45,9 @@ JQ ?= jq-jit
 105: src/105.jq assets/sets.txt
 	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/sets.txt
 
+107: src/107.jq assets/network.txt
+	@cd src && $(JQ) -nrRf $(shell basename $<) <../assets/network.txt
+
 %: src/%.jq
 	@cd src && $(JQ) -ncrf $(shell basename $<)
 
@@ -86,3 +89,6 @@ assets/triangles.txt:
 
 assets/sets.txt:
 	@curl 'https://projecteuler.net/project/resources/p105_sets.txt' -o assets/sets.txt --create-dirs
+
+assets/network.txt:
+	@curl 'https://projecteuler.net/project/resources/p107_network.txt' -o assets/network.txt --create-dirs
