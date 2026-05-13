@@ -139,3 +139,4 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 133 | 891 | 85 |  |
 | 134 | 5021 | 493 |  |
 | 135 | 4991 | 612 |  |
+| 136 | 137624 | 104697 |  |
