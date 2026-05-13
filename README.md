@@ -151,3 +151,4 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 145 | 6360 | 1425 |  |
 | 146 | — | — | postponed; needs MP modmul above 2^53 |
 | 147 | 1893 | 153 | `--force-interp` |
+| 148 | 2 | 4 |  |
