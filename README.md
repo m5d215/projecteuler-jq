@@ -173,3 +173,5 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 167 | — | — | postponed; long Ulam sequences indexed to 10¹¹ |
 | 168 | 33 | 19 | `--force-interp` |
 | 169 | — | 15 | `memoize` |
+| 170 | — | — | postponed; pandigital concatenated multiples (geometric search) |
+| 171 | 175 | 41 | `--force-interp` |
