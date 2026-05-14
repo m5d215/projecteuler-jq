@@ -6,16 +6,25 @@
     | .sum
 ;
 
-  def chain_len($start):
-    {visited: [$start], cur: ($start | dss_fact)}
-    | until(.cur as $c | (.visited | index($c)) != null;
-        .cur as $c
-        | .visited as $vs
-        | {visited: ($vs + [$c]), cur: ($c | dss_fact)}
-      )
-    | .visited | length
+# Fixed points and members of the only non-trivial cycles of dss_fact:
+# 169 -> 363601 -> 1454 -> 169, 871 <-> 45361, 872 <-> 45362.
+  def cycle_len:
+    if . == 1 or . == 2 or . == 145 or . == 40585 then 1
+    elif . == 871 or . == 45361 or . == 872 or . == 45362 then 2
+    elif . == 169 or . == 363601 or . == 1454 then 3
+    else null
+    end
+;
+
+  def chain_len:
+    memoize(
+        cycle_len as $c
+        | if $c != null then $c
+          else (dss_fact | chain_len) + 1
+          end
+    )
 ;
 
   reduce range(1; 1000000) as $n (0;
-    if chain_len($n) == 60 then . + 1 else . end
+    if ($n | chain_len) == 60 then . + 1 else . end
   )

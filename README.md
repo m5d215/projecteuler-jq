@@ -77,7 +77,7 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 71 | 857 | 137 |  |
 | 72 | 3635 | 270 | `--force-jit` |
 | 73 | 51229 | 29278 |  |
-| 74 | 207900 | 23134 |  |
+| 74 | — | 2061 | `memoize` |
 | 75 | 4512 | 946 |  |
 | 76 | 14 | 4 | `--force-interp` |
 | 77 | 14 | 4 | `--force-interp` |
