@@ -161,3 +161,4 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 155 | 240601 | 44031 |  |
 | 156 | 2361 | 310 |  |
 | 157 | 1218 | 138 | `--force-interp` |
+| 158 | 12 | 13 | `--force-interp` |
