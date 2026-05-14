@@ -168,3 +168,7 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 162 | 15 | 17 | `--force-interp` |
 | 163 | — | — | postponed; cross-hatched triangle counting needs careful formula |
 | 164 | 15 | 13 | `--force-interp` |
+| 165 | — | — | postponed; brute-force C(20000, 2) ≈ 2×10⁸ segment pairs too slow |
+| 166 | — | — | postponed; constraint counting over magic-like 4×4 grids |
+| 167 | — | — | postponed; long Ulam sequences indexed to 10¹¹ |
+| 168 | 33 | 19 | `--force-interp` |
