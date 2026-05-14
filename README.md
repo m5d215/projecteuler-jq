@@ -176,3 +176,4 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 170 | — | — | postponed; pandigital concatenated multiples (geometric search) |
 | 171 | 175 | 41 | `--force-interp` |
 | 172 | 17 | 16 | `--force-interp` |
+| 173 | 17 | 15 | `--force-interp` |
