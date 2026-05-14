@@ -172,3 +172,4 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 166 | — | — | postponed; constraint counting over magic-like 4×4 grids |
 | 167 | — | — | postponed; long Ulam sequences indexed to 10¹¹ |
 | 168 | 33 | 19 | `--force-interp` |
+| 169 | — | 15 | `memoize` |
