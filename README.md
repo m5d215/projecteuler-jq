@@ -178,3 +178,7 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 172 | 17 | 16 | `--force-interp` |
 | 173 | 17 | 15 | `--force-interp` |
 | 174 | 7637 | 336 |  |
+| 175 | — | — | postponed; Stern–Brocot continued-fraction expansion specific |
+| 176 | — | — | postponed; factorization-of-95095 optimization to find smallest L |
+| 177 | — | — | postponed; integer-angle quadrilateral enumeration |
+| 178 | 180 | 441 |  |
