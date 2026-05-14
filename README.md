@@ -187,3 +187,8 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 181 | — | — | postponed; black/white disc partitions, answer > 2^53 |
 | 182 | — | — | postponed; RSA unconcealed message minimization |
 | 183 | 78 | 30 |  |
+| 184 | — | — | postponed; lattice triangle interior point counting |
+| 185 | — | — | postponed; number mind constraint puzzle |
+| 186 | — | — | postponed; PRNG-driven union-find graph traversal |
+| 187 | — | — | postponed; semiprime count below 10^8 |
+| 188 | 18 | 17 | `--force-jit` |
