@@ -1,6 +1,6 @@
 # Solve project Euler with jq
 
-jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-interp` measurably beats the default, the flag is listed in the Workaround column and the time reflects that mode.
+jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-interp` measurably beats the default, the flag is listed in the Workaround column and the time reflects that mode. Solutions that use jq-jit-only extensions (e.g. `memoize`) show `—` in the jq column.
 
 | Problem | Time jq (ms) | Time jq-jit (ms) | Workaround |
 | --- | --- | --- | --- |
@@ -17,7 +17,7 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 11 | 7 | 4 | `--force-interp` |
 | 12 | 388 | 47 | `--force-interp` |
 | 13 | 12 | 5 |  |
-| 14 | 125000 | 10051 |  |
+| 14 | — | 2292 | `memoize` |
 | 15 | 5 | 3 | `--force-interp` |
 | 16 | 79 | 36 | `--force-interp` |
 | 17 | 10 | 17 |  |

@@ -1,10 +1,10 @@
 def collatz_len:
-    {n: ., len: 1}
-    | until(.n == 1;
-        {n: (if .n % 2 == 0 then .n / 2 else .n * 3 + 1 end),
-         len: (.len + 1)}
-      )
-    | .len
+    memoize(
+        if . == 1 then 1
+        elif . % 2 == 0 then (. / 2 | collatz_len) + 1
+        else (. * 3 + 1 | collatz_len) + 1
+        end
+    )
 ;
 
 reduce range(2; 1000000) as $n ({start: 1, len: 1};
