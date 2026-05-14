@@ -56,8 +56,8 @@ def big_to_hex:
 ;
 
 # N(n) using IE.
-# Note: jq-jit miscompiles nested big_add calls — keep intermediates in vars
-# (m5d215/jq-jit pending issue) so each big_add(...) is a leaf call.
+# Note: jq-jit miscompiles nested big_add calls (m5d215/jq-jit#679) — keep
+# intermediates in vars so each big_add(...) is a leaf call.
 def N_of($n):
     big_pow(16; $n - 1) as $p16
     | big_mul_int($p16; 15) as $T
