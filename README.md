@@ -166,3 +166,5 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 160 | 15 | 13 | `--force-interp` |
 | 161 | — | — | postponed; profile DP needs MP and complex transitions |
 | 162 | 15 | 17 | `--force-interp` |
+| 163 | — | — | postponed; cross-hatched triangle counting needs careful formula |
+| 164 | 15 | 13 | `--force-interp` |
