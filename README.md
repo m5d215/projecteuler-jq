@@ -182,3 +182,8 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 176 | — | — | postponed; factorization-of-95095 optimization to find smallest L |
 | 177 | — | — | postponed; integer-angle quadrilateral enumeration |
 | 178 | 180 | 441 |  |
+| 179 | — | — | postponed; divisor-count sieve to 10^7 heavy in jq |
+| 180 | — | — | postponed; rational Diophantine search |
+| 181 | — | — | postponed; black/white disc partitions, answer > 2^53 |
+| 182 | — | — | postponed; RSA unconcealed message minimization |
+| 183 | 78 | 30 |  |
