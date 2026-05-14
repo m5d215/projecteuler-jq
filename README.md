@@ -164,3 +164,5 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 158 | 12 | 13 | `--force-interp` |
 | 159 | — | 26403 | `memoize` |
 | 160 | 15 | 13 | `--force-interp` |
+| 161 | — | — | postponed; profile DP needs MP and complex transitions |
+| 162 | 15 | 17 | `--force-interp` |
