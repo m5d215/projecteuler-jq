@@ -157,3 +157,5 @@ jq-jit picks JIT vs. interpretation per AST. When `--force-jit` or `--force-inte
 | 151 | 14 | 13 | `--force-interp` |
 | 152 | 8842 | 1192 |  |
 | 153 | — | 107928 | `memoize` |
+| 154 | — | — | postponed; ~O(n²) ≈ 4×10¹⁰ search too slow for jq |
+| 155 | 240601 | 44031 |  |
